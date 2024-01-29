@@ -7,10 +7,17 @@ import {
   UserCircleIcon,
 } from '@heroicons/react/24/outline';
 import { Button } from '@/app/ui/button';
+import { createInvoice } from '@/app/lib/actions';
+
+/*
+  Good to know: In HTML, you'd pass a URL to the action attribute. This URL would be the destination where your form data should be submitted (usually an API endpoint).
+  However, in React, the action attribute is considered a special prop - meaning React builds on top of it to allow actions to be invoked.
+  Behind the scenes, Server Actions create a POST API endpoint. This is why you don't need to create API endpoints manually when using Server Actions.
+*/
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
   return (
-    <form>
+    <form action={createInvoice}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">

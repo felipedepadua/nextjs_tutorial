@@ -7,6 +7,10 @@ const {
 } = require('../app/lib/placeholder-data.js');
 const bcrypt = require('bcrypt');
 
+// UUIDs vs. Auto-incrementing Keys
+// We use UUIDs instead of incrementing keys (e.g., 1, 2, 3, etc.). UUIDs eliminate the risk of ID collision, are globally unique, 
+// and reduce the risk of enumeration attacks - making them ideal for large databases.
+
 async function seedUsers(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
