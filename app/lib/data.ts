@@ -173,7 +173,7 @@ export async function fetchInvoiceById(id: string) {
       amount: invoice.amount / 100,
     }));
 
-    console.log(invoice); // Invoice could be an empty array [], so invoice[0] could be undefined (See "if (!invoice) { notFound(); })" in the edit page)
+    // console.log(invoice); // Invoice could be an empty array [], so invoice[0] could be undefined (See "if (!invoice) { notFound(); })" in the edit page)
     return invoice[0];
   } catch (error) {
     console.error('Database Error:', error);
