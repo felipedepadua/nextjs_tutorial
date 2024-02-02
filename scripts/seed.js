@@ -11,6 +11,10 @@ const bcrypt = require('bcrypt');
 // We use UUIDs instead of incrementing keys (e.g., 1, 2, 3, etc.). UUIDs eliminate the risk of ID collision, are globally unique, 
 // and reduce the risk of enumeration attacks - making them ideal for large databases.
 
+// It's good practice to hash passwords before storing them in a database. Hashing converts a password into a
+//  fixed-length string of characters, which appears random, providing a layer of security even if the user's data is exposed.
+// We used a package called bcrypt to hash the user's password before storing it in the database
+
 async function seedUsers(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
