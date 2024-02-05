@@ -7,6 +7,13 @@ import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
 
 import { fetchInvoicesPages } from '@/app/lib/data';
+
+// https://nextjs.org/learn/dashboard-app/adding-metadata
+import { Metadata } from 'next';
+// add a custom title for a specific page
+export const metadata: Metadata = {
+  title: 'Invoices',
+};
  
 // Page components accept a prop called searchParams.
 // Check: https://nextjs.org/docs/app/api-reference/file-conventions/page
