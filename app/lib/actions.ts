@@ -135,13 +135,20 @@ export async function updateInvoice(id: string, prevState: State, formData: Form
   }
 
   // This would only be reachable if try is successful.
+
+  // Next.js has a Client-side Router Cache (https://nextjs.org/docs/app/building-your-application/caching#router-cache) that stores the 
+  // route segments in the user's browser for a time. Along with prefetching, this cache ensures that users can quickly navigate between 
+  // routes while reducing the number of requests made to the server.
+  // Since you're updating the data displayed in the invoices route, you want to clear this cache and trigger a new request to the server. 
+  // You can do this with the revalidatePath function from Next.js: https://nextjs.org/docs/app/api-reference/functions/revalidatePath
   revalidatePath('/dashboard/invoices');
   redirect('/dashboard/invoices');
 }
+// [VI] EXTRA - check caching: https://nextjs.org/docs/app/building-your-application/caching
 
 
 export async function deleteInvoice(id: string) {
-  // throw new Error('Failed to Delete Invoice');
+  // throw new Error('Failed to Delete Invoice'); // SEE https://nextjs.org/learn/dashboard-app/error-handling
   try {
     await sql`DELETE FROM invoices WHERE id = ${id}`;
     revalidatePath('/dashboard/invoices');

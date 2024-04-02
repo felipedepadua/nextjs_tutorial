@@ -17,6 +17,8 @@ const bcrypt = require('bcrypt');
 
 async function seedUsers(client) {
   try {
+    // uuid-ossp: https://www.timescale.com/learn/postgresql-extensions-uuid-ossp 
+    // [VI] Postgres Extensions: https://www.timescale.com/blog/top-8-postgresql-extensions/
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
     // Create the "users" table if it doesn't exist
     const createTable = await client.sql`
@@ -31,6 +33,7 @@ async function seedUsers(client) {
     console.log(`Created "users" table`);
 
     // Insert data into the "users" table
+    // The script uses bcrypt to hash the user's password.
     const insertedUsers = await Promise.all(
       users.map(async (user) => {
         const hashedPassword = await bcrypt.hash(user.password, 10);

@@ -22,7 +22,7 @@ import { createInvoice } from '@/app/lib/actions';
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
   const initialState = { message: null, errors: {} };
-  const [state, dispatch] = useFormState(createInvoice, initialState);
+  const [state, dispatch] = useFormState(createInvoice, initialState); // https://react.dev/reference/react-dom/hooks/useFormState
   console.log("state: ", state);
 
   return (

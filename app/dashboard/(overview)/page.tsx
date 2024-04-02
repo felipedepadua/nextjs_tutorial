@@ -27,3 +27,8 @@ export default async function Page() {
     </main>
   );
 }
+
+// Summary: https://nextjs.org/learn/dashboard-app/streaming#deciding-where-to-place-your-suspense-boundaries
+// As done above:
+// In general, it's good practice to move your data fetches down to the components that need it, and then wrap those components in Suspense. 
+// But there is nothing wrong with streaming the sections or the whole page if that's what your application needs.

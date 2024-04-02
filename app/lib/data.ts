@@ -1,3 +1,17 @@
+// (From Tutorial): "If you are using React Server Components (fetching data on the server), you can skip the API layer, and query your database 
+// directly without risking exposing your database secrets to the client.
+// Since Server Components execute on the server, you can query the database directly without an additional API layer.
+
+// (*) If you need to create APIs for other reasons, you can check Route Handlers:
+//    - https://nextjs.org/docs/app/building-your-application/routing/route-handlers
+//    - https://blog.logrocket.com/using-next-js-route-handlers/
+//    Route Handlers are the newer, more flexible, and recommended approach for building APIs in Next.js 13.
+//    API Routes were the previous method.
+//       - API Routes: https://nextjs.org/docs/pages/building-your-application/routing/api-routes
+//          You will see on the top of page:
+//            "Good to know: If you are using the App Router, you can use Server Components or Route Handlers instead of API Routes."
+
+
 import { sql } from '@vercel/postgres';
 import {
   CustomerField,
@@ -24,7 +38,7 @@ export async function fetchRevenue() {
     // Artificially delay a response for demo purposes.
     // Don't do this in production :)
 
-    console.log('Fetching revenue data...');
+    // console.log('Fetching revenue data...');
     await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const data = await sql<Revenue>`SELECT * FROM revenue`;
