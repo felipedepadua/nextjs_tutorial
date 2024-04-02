@@ -2,6 +2,7 @@ import '@/app/ui/global.css';
 import { inter } from '@/app/ui/fonts';
 import { Metadata } from 'next';
 
+// https://nextjs.org/learn/dashboard-app/adding-metadata
 // Any metadata in layout.js will be inherited by all pages that use it.
 export const metadata: Metadata = {
   title: {
