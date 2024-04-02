@@ -80,7 +80,7 @@ export default function LoginForm() {
 }
 
 function LoginButton() {
-  const { pending } = useFormStatus();
+  const { pending } = useFormStatus(); // use useFormStatus to handle the pending state of the form
 
   return (
     <Button className="mt-4 w-full" aria-disabled={pending}>

@@ -29,3 +29,10 @@ export default function Error({
     </main>
   );
 }
+
+
+// EXTRA:
+// FROM: https://nextjs.org/learn/dashboard-app/error-handling#handling-404-errors-with-the-notfound-function
+// Something to keep in mind: not-found.tsx will take precedence over error.tsx, so you can reach out for
+// the former when you want to handle more specific errors!
+// error.tsx is a catch-all for any error that occurs in the application.

@@ -10,7 +10,9 @@ export const authConfig = {
     signIn: '/login',
   },
   callbacks: {
+    // https://nextjs.org/learn/dashboard-app/adding-authentication#protecting-your-routes-with-nextjs-middleware
     // The authorized callback is used to verify if the request is authorized to access a page via Next.js Middleware.
+    // It is called before a request is completed, and it receives an object with the auth and request properties.
     // The auth property contains the user's session, and the request property contains the incoming request.
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;

@@ -18,6 +18,9 @@ async function getUser(email: string): Promise<User | undefined> {
 
 export const { auth, signIn, signOut } = NextAuth({
   ...authConfig,
+  // providers is an array where you list different login options such as Google or GitHub. 
+  // For this course, we will focus on using the Credentials provider only.
+  // PS: Although we're using the Credentials provider, it's generally recommended to use alternative providers such as OAuth or email providers.
   providers: [
     Credentials({
       async authorize(credentials) {

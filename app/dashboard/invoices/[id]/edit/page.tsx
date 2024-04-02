@@ -11,6 +11,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     fetchCustomers(),
   ]);
 
+  // SEE https://nextjs.org/learn/dashboard-app/error-handling#handling-404-errors-with-the-notfound-function
   // While error.tsx is useful for catching all errors, notFound can be used when you try to fetch a resource that doesn't exist.
   // E.g.  http://localhost:3000/dashboard/invoices/80ea8f2d-a9cc-4a2d-9791-998440793f8b/edit 
   // (PS: It has to be a VALID uuid that doesnt exist, if invalid, it will show error page instead)

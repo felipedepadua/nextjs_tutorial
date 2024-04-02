@@ -2,7 +2,8 @@ import Link from 'next/link';
 import { FaceFrownIcon } from '@heroicons/react/24/outline';
  
 // FROM: https://nextjs.org/learn/dashboard-app/error-handling#handling-404-errors-with-the-notfound-function
-// That's something to keep in mind, notFound will take precedence over error.tsx, so you can reach out for it when you want to handle more specific errors!
+// That's something to keep in mind, notFound will take precedence over error.tsx, so you can reach out for
+// it when you want to handle more specific errors!
 export default function NotFound() {
   return (
     <main className="flex h-full flex-col items-center justify-center gap-2">
