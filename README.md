@@ -31,5 +31,11 @@ Then go to localhost:3000
 
 Run:  > **docker compose up --build**
 
+--build flag will build images before starting containers ([https://docs.docker.com/reference/cli/docker/compose/up/](https://docs.docker.com/compose/reference/))
+
 - Check in Desktop that image was created and the container is running.
 - Then go to localhost:3000
+
+Stop and clean up: **> docker compose down** (Stop and remove containers, networks)
+
+(*) Docker compose CLI doc: [https://docs.docker.com/compose/reference/](https://docs.docker.com/compose/reference/)
