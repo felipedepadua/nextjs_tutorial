@@ -4,6 +4,10 @@ This is the starter template for the Next.js App Router Course. It contains the 
 
 For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
 
+## Run application
+
+`npm i` then `npm run dev`
+
 ## Env file:
 
 Rename `env.local` file to  `.env` and fill out with the actual values needed.
@@ -40,7 +44,6 @@ Stop and clean up: **> docker compose down** (Stop and remove containers, networ
 
 (*) Docker compose CLI doc: [https://docs.docker.com/compose/reference/](https://docs.docker.com/compose/reference/)
 
-
 ## Run server in debug mode (VSCode) - Server Side:
 
 Check: [ https://nextjs.org/docs/pages/building-your-application/configuring/debugging#debugging-with-vs-code]()
@@ -57,4 +60,6 @@ Check: [ https://nextjs.org/docs/pages/building-your-application/configuring/deb
 * Open Chrome's Developer Tools, then go to the Sources tab.
   * This will show the code and scope variables, etc. as well as 'step over' or 'continue'.
 
-(PS: you can do this front-end debug while also still running the server in debug mode)
+**(PS: you can do this front-end debug while also still running the server in debug mode)**
+
+---
